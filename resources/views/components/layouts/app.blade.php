@@ -9,7 +9,7 @@
     @livewireStyles
 </head>
 
-<body class="bg-gray-50 text-black dark:bg-black dark:text-white/50">
+<body class="bg-white text-black">
     <div class="min-h-screen flex flex-col items-center justify-center">
         {{ $slot }}
     </div>

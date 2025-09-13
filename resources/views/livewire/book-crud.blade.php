@@ -29,7 +29,7 @@
             @enderror
         </div>
         <div class="flex gap-2">
-            <a href="/" class="bg-gray-500 text-white px-4 py-2 rounded flex items-center">Back</a>
+            <a href="/" class="bg-gray-500 text-dark px-4 py-2 rounded flex items-center">Back</a>
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
                 {{ $isEdit ? 'Update' : 'Add' }} Book
             </button>

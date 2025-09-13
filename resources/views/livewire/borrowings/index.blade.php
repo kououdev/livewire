@@ -2,6 +2,7 @@
     <h2 class="text-2xl font-bold mb-4">Borrowings</h2>
     <div class="mb-4 flex justify-end">
         <a href="{{ route('borrowings.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">Add Borrowing</a>
+        <a href="/" class="bg-white-600 text-dark px-4 py-2 rounded ml-3">Back</a>
     </div>
     <table class="w-full border-collapse">
         <thead>
@@ -26,9 +27,9 @@
                     <td class="border px-4 py-2">{{ ucfirst($borrowing->status) }}</td>
                     <td class="border px-4 py-2 flex gap-2">
                         <a href="{{ route('borrowings.view', $borrowing->id) }}"
-                            class="bg-green-600 text-white px-2 py-1 rounded">View</a>
+                            class="bg-green-600 text-dark px-2 py-1 rounded">View</a>
                         <a href="{{ route('borrowings.edit', $borrowing->id) }}"
-                            class="bg-yellow-400 text-white px-2 py-1 rounded">Edit</a>
+                            class="bg-yellow-400 text-dark px-2 py-1 rounded">Edit</a>
                     </td>
                 </tr>
             @empty

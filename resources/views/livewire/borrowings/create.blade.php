@@ -55,7 +55,7 @@
             @enderror
         </div>
         <div class="flex gap-2">
-            <a href="{{ route('borrowings.index') }}" class="bg-gray-500 text-white px-4 py-2 rounded">Back</a>
+            <a href="{{ route('borrowings.index') }}" class="bg-gray-500 text-dark px-4 py-2 rounded">Back</a>
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save</button>
         </div>
     </form>
