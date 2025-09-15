@@ -3,15 +3,46 @@
 namespace App\Livewire\Borrowings;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Borrowing;
 
 class Index extends Component
 {
+    use WithPagination;
+
+
     public $searchBook = '';
     public $searchCustomer = '';
-    public $searchBorrowedAt = '';
+    public $searchBorrowedAt;
     public $searchReturnedAt = '';
     public $searchStatus = '';
+    public $perPage = 10;
+
+    public function mount()
+    {
+        $this->searchBorrowedAt = now()->format('Y-m-d');
+    }
+
+    public function updatingSearchBook()
+    {
+        $this->resetPage();
+    }
+    public function updatingSearchCustomer()
+    {
+        $this->resetPage();
+    }
+    public function updatingSearchBorrowedAt()
+    {
+        $this->resetPage();
+    }
+    public function updatingSearchReturnedAt()
+    {
+        $this->resetPage();
+    }
+    public function updatingSearchStatus()
+    {
+        $this->resetPage();
+    }
 
     public function resetFilters()
     {
@@ -20,6 +51,7 @@ class Index extends Component
         $this->searchBorrowedAt = '';
         $this->searchReturnedAt = '';
         $this->searchStatus = '';
+        $this->resetPage();
     }
 
     public function render()
@@ -45,7 +77,7 @@ class Index extends Component
                 $q->where('status', $this->searchStatus);
             })
             ->orderByDesc('id')
-            ->get();
+            ->paginate($this->perPage);
         return view('livewire.borrowings.index', compact('borrowings'));
     }
 }

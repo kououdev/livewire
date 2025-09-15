@@ -19,10 +19,23 @@
             <button wire:click="resetFilters" type="button"
                 class="bg-gray-400 text-white px-4 py-2 rounded">Reset</button>
         </div>
-        <div class="flex justify-end">
-            <a href="{{ route('borrowings.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">Add
-                Borrowing</a>
-            <a href="/" class="bg-white-600 text-dark px-4 py-2 rounded ml-3">Back</a>
+        <div class="flex flex-wrap items-center justify-between mb-2">
+            <div>
+                <label class="mr-2 font-semibold">Show</label>
+                <select wire:model.live="perPage" class="border rounded px-3 py-2 text-black">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                </select>
+                <span class="ml-1">entries</span>
+            </div>
+            <div class="flex gap-2">
+                <a href="{{ route('borrowings.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">Add
+                    Borrowing</a>
+                <a href="/" class="bg-white-600 text-dark px-4 py-2 rounded">Back</a>
+            </div>
         </div>
     </div>
     <table class="w-full border-collapse">
@@ -60,4 +73,7 @@
             @endforelse
         </tbody>
     </table>
+    <div class="mt-4">
+        {{ $borrowings->links() }}
+    </div>
 </div>
