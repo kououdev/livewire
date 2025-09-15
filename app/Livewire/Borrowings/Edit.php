@@ -22,14 +22,15 @@ class Edit extends Component
         'status' => 'required|in:borrowed,returned',
     ];
 
-    public function mount($borrowing)
+    public function mount($borrowingId)
     {
-        $this->borrowing = Borrowing::findOrFail($borrowing);
+        $this->borrowing = Borrowing::findOrFail($borrowingId);
         $this->book_id = $this->borrowing->book_id;
         $this->customer_id = $this->borrowing->customer_id;
         $this->borrowed_at = $this->borrowing->borrowed_at;
         $this->returned_at = $this->borrowing->returned_at;
         $this->status = $this->borrowing->status;
+
         $this->books = Book::orderBy('title')->get();
         $this->customers = Customer::orderBy('name')->get();
     }

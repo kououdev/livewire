@@ -21,6 +21,7 @@ class Create extends Component
         'status' => 'required|in:borrowed,returned',
     ];
 
+    // untuk munculin data apa aja ketika page pertama kali di load
     public function mount()
     {
         $this->books = Book::orderBy('title')->get();
@@ -30,7 +31,7 @@ class Create extends Component
 
     public function store()
     {
-        $this->validate();
+        $this->validate(); // ini akan baca protected $rules di atas
         Borrowing::create([
             'book_id' => $this->book_id,
             'customer_id' => $this->customer_id,

@@ -18,6 +18,6 @@ Route::get('/customers', CustomerCrud::class);
 Route::prefix('borrowings')->group(function () {
     Route::get('/', BorrowingsIndex::class)->name('borrowings.index');
     Route::get('/create', BorrowingsCreate::class)->name('borrowings.create');
-    Route::get('/{borrowing}/edit', BorrowingsEdit::class)->name('borrowings.edit');
+    Route::get('/{borrowingId}/edit', BorrowingsEdit::class)->name('borrowings.edit');
     Route::get('/{borrowing}', BorrowingsView::class)->name('borrowings.view');
 });
