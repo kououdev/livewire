@@ -10,9 +10,9 @@ class View extends Component
 {
     public $borrowing;
 
-    public function mount($borrowing)
+    public function mount($borrowingId)
     {
-        $this->borrowing = Borrowing::with(['book', 'customer'])->findOrFail($borrowing);
+        $this->borrowing = Borrowing::with(['book', 'customer'])->findOrFail($borrowingId);
     }
 
     public function render()
