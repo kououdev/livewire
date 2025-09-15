@@ -1,8 +1,29 @@
 <div class="max-w-4xl mx-auto py-8">
     <h2 class="text-2xl font-bold mb-4">Borrowings</h2>
-    <div class="mb-4 flex justify-end">
-        <a href="{{ route('borrowings.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">Add Borrowing</a>
-        <a href="/" class="bg-white-600 text-dark px-4 py-2 rounded ml-3">Back</a>
+    <div class="mb-4 flex flex-col gap-2">
+        <div class="flex flex-wrap gap-2 mb-2">
+            <input type="text" wire:model.defer="searchBook" placeholder="Book Title"
+                class="border rounded px-3 py-2 text-black" />
+            <input type="text" wire:model.defer="searchCustomer" placeholder="Customer Name"
+                class="border rounded px-3 py-2 text-black" />
+            <input type="date" wire:model.defer="searchBorrowedAt" placeholder="Borrowed At"
+                class="border rounded px-3 py-2 text-black" />
+            <input type="date" wire:model.defer="searchReturnedAt" placeholder="Returned At"
+                class="border rounded px-3 py-2 text-black" />
+            <select wire:model.defer="searchStatus" class="border rounded px-3 py-2 text-black">
+                <option value="">-- Status --</option>
+                <option value="borrowed">Borrowed</option>
+                <option value="returned">Returned</option>
+            </select>
+            <button wire:click="$refresh" class="bg-blue-600 text-white px-4 py-2 rounded">Search</button>
+            <button wire:click="resetFilters" type="button"
+                class="bg-gray-400 text-white px-4 py-2 rounded">Reset</button>
+        </div>
+        <div class="flex justify-end">
+            <a href="{{ route('borrowings.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">Add
+                Borrowing</a>
+            <a href="/" class="bg-white-600 text-dark px-4 py-2 rounded ml-3">Back</a>
+        </div>
     </div>
     <table class="w-full border-collapse">
         <thead>
