@@ -55,3 +55,14 @@ This is a Laravel + Livewire CRUD application with the following features:
 
 ---
 
+## Create Supplier with Pagination for Sample
+```shell
+$ php artisan make:model Supplier -m
+$ php artisan migrate
+
+$ php artisan make:livewire Suppliers/Index 
+$ php artisan make:livewire Suppliers/Create 
+$ php artisan make:livewire Suppliers/Edit 
+$ php artisan make:livewire Suppliers/View
+
+```

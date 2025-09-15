@@ -7,5 +7,6 @@
             <a href="/books" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Books</a>
             <a href="/customers" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Customers</a>
             <a href="/borrowings" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Borrowings</a>
+            <a href="/suppliers" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Suppliers</a>
         </nav>
     </div>
